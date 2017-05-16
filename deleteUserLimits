@@ -1,0 +1,13 @@
+<?php
+	require("config.php");
+	require("connection.php");
+
+	$username = $_POST['user'];
+
+	if($conn)
+	{
+		$sql = "DELETE FROM limitbuy WHERE username = '$username";
+		mysql_query($sql);
+		$sql = "DELETE FROM limitsell WHERE username = '$username";
+		mysql_query($sql);
+	}
